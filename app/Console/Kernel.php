@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('bicolor:sphere')->everyMinute();
+        $schedule->command('bicolor:sphere')->dailyAt('00:30:00');
     }
 
     /**
