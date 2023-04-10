@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    nginx:
+        image: nginx:1.18.0
+        ports:
+            - "80:80"
+            - "10002:80"
+        volumes:
+            - "./server/nginx/nginx.conf:/etc/nginx/nginx.conf"
+            - "./server/nginx/conf.d:/etc/nginx/conf.d"
+            - "./runtime/nginx/log:/var/log/nginx"
+            - ".:/usr/share/nginx/html"
+    php:
+        build:
+            context: ./server/php
+        volumes:
+            - "./server/php/php.ini:/usr/local/etc/php/php.ini"
+            - "./server/php/php-fpm.conf:/usr/local/etc/php-fpm.conf"
+            - "./server/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf"
+            - ".:/usr/share/nginx/html"
+        command: sh -c "/bin/sh /usr/share/nginx/html/run.test.sh"
+        # command: sh -c "php-fpm -R"
