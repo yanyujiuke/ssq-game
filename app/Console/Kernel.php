@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('bicolor:sphere')->dailyAt('00:30:00');
+        $schedule->command('bicolor:sphere')->days([Schedule::SUNDAY, Schedule::TUESDAY, Schedule::THURSDAY])->at('00:30');
     }
 
     /**

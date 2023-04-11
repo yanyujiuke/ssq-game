@@ -26,9 +26,6 @@ class BicolorSphereCommand extends Command
      */
     public function handle()
     {
-        $date = date('w');
-        if ($date == 0 || $date == 2 || $date == 4) {
-            BicolorSphereJob::dispatch();
-        }
+        BicolorSphereJob::dispatch();
     }
 }

@@ -38,7 +38,7 @@ class BicolorSphereJob implements ShouldQueue
         if (!$res || $res['date'] != date('Y-m-d')) {
             for ($i = 0; $i < 5; $i++) {
                 // 生成6个红球随机数
-                $red_arr = Helper::randomArr(32, 1, 6);
+                $red_arr = Helper::randomArr(33, 1, 6);
                 // 生成1个蓝球随机数
                 $blue = rand(1, 16);
 
