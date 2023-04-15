@@ -15,5 +15,6 @@ Route::group([
     $router->get('/', 'HomeController@index');
 
     $router->resource('bicolor/sphere', 'BicolorSphereController');
+    $router->resource('draw/prize', 'DrawPrizeController');
 
 });

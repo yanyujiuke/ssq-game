@@ -47,6 +47,12 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection blue
      * @property Grid\Column|Collection lottery_number
      * @property Grid\Column|Collection deleted_at
+     * @property Grid\Column|Collection code
+     * @property Grid\Column|Collection awards
+     * @property Grid\Column|Collection condition
+     * @property Grid\Column|Collection desc
+     * @property Grid\Column|Collection bonus
+     * @property Grid\Column|Collection remark
      * @property Grid\Column|Collection uuid
      * @property Grid\Column|Collection connection
      * @property Grid\Column|Collection queue
@@ -98,6 +104,12 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection blue(string $label = null)
      * @method Grid\Column|Collection lottery_number(string $label = null)
      * @method Grid\Column|Collection deleted_at(string $label = null)
+     * @method Grid\Column|Collection code(string $label = null)
+     * @method Grid\Column|Collection awards(string $label = null)
+     * @method Grid\Column|Collection condition(string $label = null)
+     * @method Grid\Column|Collection desc(string $label = null)
+     * @method Grid\Column|Collection bonus(string $label = null)
+     * @method Grid\Column|Collection remark(string $label = null)
      * @method Grid\Column|Collection uuid(string $label = null)
      * @method Grid\Column|Collection connection(string $label = null)
      * @method Grid\Column|Collection queue(string $label = null)
@@ -154,6 +166,12 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection blue
      * @property Show\Field|Collection lottery_number
      * @property Show\Field|Collection deleted_at
+     * @property Show\Field|Collection code
+     * @property Show\Field|Collection awards
+     * @property Show\Field|Collection condition
+     * @property Show\Field|Collection desc
+     * @property Show\Field|Collection bonus
+     * @property Show\Field|Collection remark
      * @property Show\Field|Collection uuid
      * @property Show\Field|Collection connection
      * @property Show\Field|Collection queue
@@ -205,6 +223,12 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection blue(string $label = null)
      * @method Show\Field|Collection lottery_number(string $label = null)
      * @method Show\Field|Collection deleted_at(string $label = null)
+     * @method Show\Field|Collection code(string $label = null)
+     * @method Show\Field|Collection awards(string $label = null)
+     * @method Show\Field|Collection condition(string $label = null)
+     * @method Show\Field|Collection desc(string $label = null)
+     * @method Show\Field|Collection bonus(string $label = null)
+     * @method Show\Field|Collection remark(string $label = null)
      * @method Show\Field|Collection uuid(string $label = null)
      * @method Show\Field|Collection connection(string $label = null)
      * @method Show\Field|Collection queue(string $label = null)
