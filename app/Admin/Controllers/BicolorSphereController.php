@@ -110,7 +110,7 @@ class BicolorSphereController extends AdminController
             $grid->column('lottery_number')->display(function ($v) {
                 $arr = explode(' ', $v);
                 $str = '';
-                for ($i = 0; $i < count($arr) - 2; $i++) {
+                for ($i = 0; $i < count($arr) - 1; $i++) {
                     $str .= "<span style='color: red;'>$arr[$i]</span>" . ' ';
                 }
                 $index = count($arr) - 1;
@@ -129,7 +129,7 @@ class BicolorSphereController extends AdminController
             ])->label([
                 -1 => 'grey',
                 0 => 'green',
-                'red'
+                'default' => 'red'
             ]);
             // $grid->column('created_at');
             // $grid->column('updated_at')->sortable();

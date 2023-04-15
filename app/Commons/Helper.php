@@ -2,6 +2,8 @@
 
 namespace App\Commons;
 
+use Exception;
+
 class Helper
 {
     /**
@@ -25,15 +27,10 @@ class Helper
             for ($i = 0; $i < $range; $i++) {
                 $arr[$i] = $i + $min; // 生成固定范围的顺序数
             }
-            for ($j = 0; $j < (2 * $max); $j++) {
-                $offset1 = mt_rand(0, $range - 1); // 生成固定范围的随机数组下标1
-                $offset2 = mt_rand(0, $range - 1); // 生成固定范围的随机数组下标2
 
-                // 将上述两个随机生成的下标为索引交换两个元素，将整个数组乱序
-                $temp = $arr[$offset1];
-                $arr[$offset1] = $arr[$offset2];
-                $arr[$offset2] = $temp;
-            }
+            // 将数组随机打乱
+            shuffle($arr);
+
             if ($range != $amount) {
                 // 从后面开始删除多余的数组
                 for ($m = 0; $m < $range - $amount; $m++) {
@@ -44,5 +41,52 @@ class Helper
             sort($arr);
             return $arr;
         }
+    }
+
+    /**
+     * 发送HTTP请求方法
+     * @param string $url 请求URL
+     * @param array $params 请求参数
+     * @param string $method 请求方法GET/POST
+     * @param array $header 请求头
+     * @param bool $multi 是否传输文件
+     * @return bool|string  $data   响应数据
+     * @throws Exception
+     */
+    public static function httpRequest(string $url, array $params, string $method = 'GET', array $header = [], bool $multi = false)
+    {
+        $opts = [
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_HTTPHEADER     => $header
+        ];
+        // 根据请求类型设置特定参数
+        switch(strtoupper($method)){
+            case 'GET':
+                $opts[CURLOPT_URL] = $url . '?' . http_build_query($params);
+                break;
+            case 'POST':
+                //判断是否传输文件
+                $params = $multi ? $params : http_build_query($params);
+                $opts[CURLOPT_URL] = $url;
+                $opts[CURLOPT_POST] = 1;
+                $opts[CURLOPT_POSTFIELDS] = $params;
+                break;
+            default:
+                throw new Exception('不支持的请求方式！');
+        }
+
+        // 初始化并执行curl请求
+        $ch = curl_init();
+        curl_setopt_array($ch, $opts);
+        $data  = curl_exec($ch);
+        $error = curl_error($ch);
+        curl_close($ch);
+        if($error) {
+            throw new Exception('请求发生错误：' . $error);
+        }
+        return  $data;
     }
 }
