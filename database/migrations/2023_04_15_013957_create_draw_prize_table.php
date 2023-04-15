@@ -15,12 +15,12 @@ class CreateDrawPrizeTable extends Migration
     {
         Schema::create('draw_prize', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->unique()->default('');
-            $table->string('awards')->default('');
-            $table->string('condition')->default('');
-            $table->string('desc')->default('');
-            $table->string('bonus')->default('');
-            $table->string('remark')->default('');
+            $table->string('code')->unique()->default('')->comment('唯一标识');
+            $table->string('awards')->default('')->comment('奖项');
+            $table->string('condition')->default('')->comment('中奖条件');
+            $table->string('desc')->default('')->comment('中奖说明');
+            $table->string('bonus')->default('')->comment('中奖金额');
+            $table->string('remark')->default('')->comment('备注');
             $table->timestamps();
             $table->softDeletes();
         });

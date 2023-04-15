@@ -1,4 +1,4 @@
-<?php 
+<?php
 return [
     'labels' => [
         'BicolorSphere' => '双色球',
@@ -15,6 +15,7 @@ return [
         'red6' => '红球6',
         'blue' => '篮球',
         'lottery_number' => '开奖号码',
+        'awards' => '奖项',
     ],
     'options' => [
     ],

@@ -117,6 +117,20 @@ class BicolorSphereController extends AdminController
                 $str .= "<span style='color: blue;'>$arr[$index]</span>";
                 return $str;
             });
+            $grid->column('awards')->using([
+                -1 => '未开奖',
+                0 => '未中奖',
+                1 => '一等奖',
+                2 => '二等奖',
+                3 => '三等奖',
+                4 => '四等奖',
+                5 => '五等奖',
+                6 => '六等奖',
+            ])->label([
+                -1 => 'grey',
+                0 => 'green',
+                'red'
+            ]);
             // $grid->column('created_at');
             // $grid->column('updated_at')->sortable();
 

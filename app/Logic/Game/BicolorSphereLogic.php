@@ -32,4 +32,9 @@ class BicolorSphereLogic extends BaseLogic
     {
         return $this->model->where($where)->update($data);
     }
+
+    public function getByWhere(array $where)
+    {
+        return $this->model->where($where)->get();
+    }
 }
