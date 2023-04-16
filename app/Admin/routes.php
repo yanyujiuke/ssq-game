@@ -16,5 +16,6 @@ Route::group([
 
     $router->resource('bicolor/sphere', 'BicolorSphereController');
     $router->resource('draw/prize', 'DrawPrizeController');
+    $router->resource('ssq/history', 'SsqHistoryController');
 
 });

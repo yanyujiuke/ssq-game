@@ -46,9 +46,9 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection red6
      * @property Grid\Column|Collection blue
      * @property Grid\Column|Collection lottery_number
+     * @property Grid\Column|Collection awards
      * @property Grid\Column|Collection deleted_at
      * @property Grid\Column|Collection code
-     * @property Grid\Column|Collection awards
      * @property Grid\Column|Collection condition
      * @property Grid\Column|Collection desc
      * @property Grid\Column|Collection bonus
@@ -66,6 +66,9 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection abilities
      * @property Grid\Column|Collection last_used_at
      * @property Grid\Column|Collection expires_at
+     * @property Grid\Column|Collection open_code
+     * @property Grid\Column|Collection expect
+     * @property Grid\Column|Collection time
      * @property Grid\Column|Collection email_verified_at
      *
      * @method Grid\Column|Collection id(string $label = null)
@@ -103,9 +106,9 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection red6(string $label = null)
      * @method Grid\Column|Collection blue(string $label = null)
      * @method Grid\Column|Collection lottery_number(string $label = null)
+     * @method Grid\Column|Collection awards(string $label = null)
      * @method Grid\Column|Collection deleted_at(string $label = null)
      * @method Grid\Column|Collection code(string $label = null)
-     * @method Grid\Column|Collection awards(string $label = null)
      * @method Grid\Column|Collection condition(string $label = null)
      * @method Grid\Column|Collection desc(string $label = null)
      * @method Grid\Column|Collection bonus(string $label = null)
@@ -123,6 +126,9 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection abilities(string $label = null)
      * @method Grid\Column|Collection last_used_at(string $label = null)
      * @method Grid\Column|Collection expires_at(string $label = null)
+     * @method Grid\Column|Collection open_code(string $label = null)
+     * @method Grid\Column|Collection expect(string $label = null)
+     * @method Grid\Column|Collection time(string $label = null)
      * @method Grid\Column|Collection email_verified_at(string $label = null)
      */
     class Grid {}
@@ -165,9 +171,9 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection red6
      * @property Show\Field|Collection blue
      * @property Show\Field|Collection lottery_number
+     * @property Show\Field|Collection awards
      * @property Show\Field|Collection deleted_at
      * @property Show\Field|Collection code
-     * @property Show\Field|Collection awards
      * @property Show\Field|Collection condition
      * @property Show\Field|Collection desc
      * @property Show\Field|Collection bonus
@@ -185,6 +191,9 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection abilities
      * @property Show\Field|Collection last_used_at
      * @property Show\Field|Collection expires_at
+     * @property Show\Field|Collection open_code
+     * @property Show\Field|Collection expect
+     * @property Show\Field|Collection time
      * @property Show\Field|Collection email_verified_at
      *
      * @method Show\Field|Collection id(string $label = null)
@@ -222,9 +231,9 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection red6(string $label = null)
      * @method Show\Field|Collection blue(string $label = null)
      * @method Show\Field|Collection lottery_number(string $label = null)
+     * @method Show\Field|Collection awards(string $label = null)
      * @method Show\Field|Collection deleted_at(string $label = null)
      * @method Show\Field|Collection code(string $label = null)
-     * @method Show\Field|Collection awards(string $label = null)
      * @method Show\Field|Collection condition(string $label = null)
      * @method Show\Field|Collection desc(string $label = null)
      * @method Show\Field|Collection bonus(string $label = null)
@@ -242,6 +251,9 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection abilities(string $label = null)
      * @method Show\Field|Collection last_used_at(string $label = null)
      * @method Show\Field|Collection expires_at(string $label = null)
+     * @method Show\Field|Collection open_code(string $label = null)
+     * @method Show\Field|Collection expect(string $label = null)
+     * @method Show\Field|Collection time(string $label = null)
      * @method Show\Field|Collection email_verified_at(string $label = null)
      */
     class Show {}

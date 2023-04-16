@@ -23,6 +23,26 @@ class SsqLib
     }
 
     /**
+     *  获取指定期号的通用获奖号码信息
+     * @param int $expect 开奖期数
+     * @return bool|string
+     * @throws \Exception
+     */
+    public function lotteryAim(int $expect)
+    {
+        $api = 'api/lottery/common/aim_lottery';
+        $path = $this->url . $api;
+        $params = [
+            'app_id' =>  $this->app_id,
+            'app_secret' => $this->app_secret,
+            'code' => 'ssq',
+            'expect' => $expect
+        ];
+
+        return Helper::httpRequest($path, $params);
+    }
+
+    /**
      * 最新通用中奖号码信息
      * @throws \Exception
      */

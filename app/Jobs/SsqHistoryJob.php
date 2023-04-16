@@ -4,7 +4,6 @@ namespace App\Jobs;
 
 use App\Lib\SsqLib;
 use App\Logic\Game\BicolorSphereLogic;
-use App\Logic\Game\SsqHistoryLogic;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -12,10 +11,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
 /**
- * 获取双色球开奖号码
+ * 获取双色球历史开奖号码开奖号码
  */
 
-class SsqJob implements ShouldQueue
+class SsqHistoryJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -99,15 +98,6 @@ class SsqJob implements ShouldQueue
 
                 $model->updateByWhere(['id' => $v['id']], ['awards' => $awards]);
             });
-
-            // 添加开奖号码历史记录
-            (new SsqHistoryLogic())->setData([
-                'open_code' => $res['data']['openCode'],
-                'code' => $res['data']['code'],
-                'expect' => $res['data']['expect'],
-                'name' => $res['data']['name'],
-                'time' => $res['data']['time'],
-            ]);
         }
     }
 
