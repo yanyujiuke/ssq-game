@@ -1,4 +1,4 @@
-FROM php-fpm:8.1.3
+FROM bitnami/php-fpm:8.1
 
 # 设置时间
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
