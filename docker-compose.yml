@@ -20,3 +20,13 @@ services:
             - ".:/usr/share/nginx/html"
         command: sh -c "/bin/sh /usr/share/nginx/html/run.test.sh"
         # command: sh -c "php-fpm -R"
+    mysql:
+        image: mysql:8.0.23
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "123456"
+            MYSQL_ROOT_HOST: "%"
+        volumes:
+            - "./runtime/mysql/data:/var/lib/mysql"
+            - "./server/mysql/conf:/etc/mysql/conf.d"
