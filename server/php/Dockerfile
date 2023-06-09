@@ -24,9 +24,6 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer self-update --clean-backups
 
-RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
-&& echo -e "\033[42;37m Build Completed :).\033[0m\n" \
-
 # Mysqli 扩展 自带 直接安装即可(当前数据库使用的mysqli查询的)
 RUN docker-php-ext-install mysqli
 # PDO 扩展 自带 直接安装即可
