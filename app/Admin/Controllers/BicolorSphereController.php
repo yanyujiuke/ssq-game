@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Grid\SsqRandNum;
 use App\Admin\Repositories\BicolorSphere;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
@@ -24,7 +25,7 @@ class BicolorSphereController extends AdminController
             $grid->paginate(5);
             $grid->disableCreateButton();
 
-            $grid->tools([new \App\Admin\Actions\Grid\BicolorSphere()]);
+            $grid->tools([(new \App\Admin\Actions\Grid\BicolorSphere()), new SsqRandNum()]);
 
             $grid->model()->orderByDesc('date');
 

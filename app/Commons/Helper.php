@@ -44,6 +44,27 @@ class Helper
     }
 
     /**
+     * 返回指定的随机数
+     * @param array $arr
+     * @param int $num
+     * @return array|mixed
+     */
+    public static function randomArr2(array $arr, int $num): mixed
+    {
+        $return = [];
+        $res = array_rand($arr, $num);
+        if (is_array($res)) {
+            for ($i = 0; $i < $num; $i++) {
+                // var_dump($arr[$res[$i]]);
+                $return[] = $arr[$res[$i]];
+            }
+            return $return;
+        } else {
+            return $arr[$res];
+        }
+    }
+
+    /**
      * 发送HTTP请求方法
      * @param string $url 请求URL
      * @param array $params 请求参数
