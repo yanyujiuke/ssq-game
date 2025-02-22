@@ -45,7 +45,7 @@ class BicolorSphereJob implements ShouldQueue
                 // 数据入库
                 $model->setData([
                     'date' => date('Y-m-d'),
-                    'num' => isset($res['num']) ? $res['num'] + 1 : 0,
+                    'num' => isset($res['num']) ? $res['num'] + 1 : 1,
                     'red1' => $red_arr[0],
                     'red2' => $red_arr[1],
                     'red3' => $red_arr[2],

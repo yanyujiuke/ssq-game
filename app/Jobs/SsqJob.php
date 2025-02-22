@@ -49,7 +49,7 @@ class SsqJob implements ShouldQueue
             $date = date('Y-m-d', strtotime($res['data']['time']));
             $str = str_replace(',', ' ', $res['data']['openCode']);
             $str = str_replace('+', ' ', $str);
-            $model->updateByWhere(['date' => $date], ['lottery_number' => $str]);
+            $model->updateByWhere(['date' => $date], ['num' => $res['data']['expect'], 'lottery_number' => $str]);
 
             $input = explode(' ', $str);
             // 判断是否中奖
