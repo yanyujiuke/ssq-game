@@ -57,8 +57,8 @@ class SsqRandNumForm extends Form
     public function form()
     {
 
-        $this->checkbox('red', '红球')->options($this->numFor(1, 33));
-        $this->checkbox('blue')->options($this->numFor(1, 16));
+        $this->checkbox('red', '红球')->options($this->numFor(1, 33))->canCheckAll();
+        $this->checkbox('blue')->options($this->numFor(1, 16))->canCheckAll();
         $this->number('num', '注数')->default(5);
     }
 

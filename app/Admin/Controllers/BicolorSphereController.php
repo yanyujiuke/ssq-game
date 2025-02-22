@@ -27,7 +27,7 @@ class BicolorSphereController extends AdminController
 
             $grid->tools([(new \App\Admin\Actions\Grid\BicolorSphere()), new SsqRandNum()]);
 
-            $grid->model()->orderByDesc('date');
+            $grid->model()->orderByDesc('id');
 
             // $grid->column('id')->sortable();
             $grid->column('date');
