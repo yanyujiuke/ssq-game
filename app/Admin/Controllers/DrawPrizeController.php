@@ -37,10 +37,10 @@ class DrawPrizeController extends AdminController
                 if ($id < 4) {
                     for ($i = 0; $i < strlen($v); $i++) {
                         if ($v[$i] == 'r') {
-                            $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:red;float:left"></div>';
+                            $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:indianred;float:left;margin-right: 2px"></div>';
                         }
                         if ($v[$i] == 'b') {
-                            $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:blue;float:left"></div>';
+                            $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:skyblue;float:left;margin-right: 2px"></div>';
                         }
                     }
                 } else {
@@ -49,10 +49,10 @@ class DrawPrizeController extends AdminController
                         $str .= '<div style="float:left;clear: both;margin-bottom: 10px">';
                         for ($i = 0; $i < strlen($item); $i++) {
                             if ($item[$i] == 'r') {
-                                $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:red;float:left"></div>';
+                                $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:indianred;float:left;margin-right: 2px"></div>';
                             }
                             if ($item[$i] == 'b') {
-                                $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:blue;float:left"></div>';
+                                $str .= '<div style="width:20px;height:20px;border-radius:50%;background-color:skyblue;float:left;margin-right: 2px"></div>';
                             }
                         }
                         $str .= '</div>';
@@ -61,9 +61,15 @@ class DrawPrizeController extends AdminController
 
                 return $str;
             });
-            $grid->column('desc')->label('skyblue');
+            $grid->column('desc')->explode('；')->display(function ($item) {
+                $str = '';
+                foreach ($item as $v) {
+                    $str .= '<div style="float:left;clear: both;margin-bottom: 10px">' . $v . '</div>';
+                }
+                return $str;
+            });
             $grid->column('bonus');
-            // $grid->column('remark');
+//             $grid->column('remark');
             // $grid->column('created_at');
             // $grid->column('updated_at')->sortable();
 
