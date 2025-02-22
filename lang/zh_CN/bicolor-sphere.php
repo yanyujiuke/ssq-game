@@ -1,8 +1,8 @@
 <?php
 return [
     'labels' => [
-        'BicolorSphere' => '双色球',
-        'bicolor-sphere' => '双色球',
+        'BicolorSphere' => '双色球推荐号码',
+        'bicolor-sphere' => '双色球推荐号码',
     ],
     'fields' => [
         'date' => '日期',
