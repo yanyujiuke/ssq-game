@@ -8,7 +8,7 @@ services:
         volumes:
             - "./server/nginx/nginx.conf:/etc/nginx/nginx.conf"
             - "./server/nginx/conf.d:/etc/nginx/conf.d"
-            - "./runtime/nginx/log:/var/log/nginx"
+            - "./server/nginx/log:/var/log/nginx"
             - ".:/usr/share/nginx/html"
         command: >
             sh -c "chown -R www-data:www-data /usr/share/nginx/html/storage
@@ -31,5 +31,5 @@ services:
             MYSQL_ROOT_PASSWORD: "123456"
             MYSQL_ROOT_HOST: "%"
         volumes:
-            - "./runtime/mysql/data:/var/lib/mysql"
+            - "./server/mysql/data:/var/lib/mysql"
             - "./server/mysql/conf:/etc/mysql/conf.d"
